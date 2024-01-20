@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('partials/head'); %>
+
+  <body class="bg-body-tertiary">
+    <div class="container">
+        <form class="mt-5" action="/add-note" method="POST">
+
+        <div class="mb-3">
+            <label for="note" class="form-label">Note</label>
+            <textarea rows="5" name="note" class="form-control" id="note"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </body>
+
+</html>

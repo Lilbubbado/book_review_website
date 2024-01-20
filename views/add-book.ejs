@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('partials/head'); %>
+
+  <body class="bg-body-tertiary">
+    <div class="container">
+        <form class="mt-5" action="/add-book" method="POST">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="title">
+        </div>
+
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" name="author" class="form-control" id="author">
+        </div>
+
+        <div class="mb-3">
+            <label for="dateRead" class="form-label">Date Read</label>
+            <input type="text" name="dateRead" class="form-control" id="dateRead">
+        </div>
+
+        <div class="mb-3">
+            <label for="rating" class="form-label">Rating</label>
+            <input type="number" name="rating" class="form-control" id="rating">
+        </div>
+
+        <div class="mb-3">
+            <label for="isbn" class="form-label">ISBN</label>
+            <input type="text" name="isbn" class="form-control" id="isbn">
+        </div>
+
+        <div class="mb-3">
+            <label for="review" class="form-label">Review</label>
+            <textarea rows="5" name="review" class="form-control" id="review"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </body>
+
+</html>

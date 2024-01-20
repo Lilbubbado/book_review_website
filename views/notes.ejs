@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('partials/head'); %>
+
+  <body class="bg-body-tertiary">
+    <nav class="navbar bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white">Adam's Book Notes</a>
+        <form action="/search" method="POST" class="d-flex" role="search">
+          <a href="/" class="me-2 btn btn-info text-white">Home</a>
+          <input class="form-control me-2" name="searchBox" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-info" type="submit">Search</button>
+        </form>
+    </nav>
+
+    
+      
+      <div class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-column-reverse flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-lg-9">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"><%= book.title %></h1>
+            <h4>Author: <%= book.author %> </h4>
+            <h5>My Rating: <%= book.rating %></h5>
+            <h5>ISBN: <%= book.isbn %></h5>
+            <p class="lead"><%= book.review %></p>
+            <p class="lead fs-6 fst-italic">Date read: <%= book.date_read %></p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <a href="/add-note" class="btn btn-info btn-lg px-4 me-md-2 text-white">Add Notes</a>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <img src="https://covers.openlibrary.org/b/ISBN/<%= book.isbn %>-M.jpg" class="d-block mx-lg-auto img-fluid" alt="<%= book.title %> Cover Image" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+    
+
+    <hr />
+    <% for (let i = 0; i < notes.length; i++) { %>
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-column-reverse flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-lg-9">
+                    <p class="lead"><%= notes[i].note %></p>
+                </div>
+            </div>
+        </div>
+        <hr />
+      <% } %>
+  </body>
+
+</html>
